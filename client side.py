@@ -1,6 +1,6 @@
 import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('192.168.1.72', 50000))
+s.connect(('Put IP Here', 50000))
 m = "HI"
 while True:
     try:
