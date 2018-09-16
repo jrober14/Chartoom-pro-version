@@ -1,4 +1,5 @@
 import socket
+q = "hi"
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('0.0.0.0', 50000))
 s.listen(1)
@@ -9,13 +10,21 @@ print(2)
 print(addr)
 print(3)
 while True:
-    data = conn.recv(1024)
-
-
-    print(data)
-    data = input(": ")
-    conn.send(data.encode())
-
-conn.close()
+    try:
+        data = conn.recv(1024)
+        rec = repr(data)
+        print(rec)
+        print(1)
+        print(data)
+        print(2)
+        print("The Message Recived is " + rec[2:-1])
+        print(3)
+        data = input(": ")
+        conn.send(data.encode())
+    except:
+        conn.shutdown(1)
+        conn.close()
+        print("There was an error!")
+        exit()
 
 # socket.gethostbyname_ex(socket.gethostname())[-1]
