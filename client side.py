@@ -10,7 +10,7 @@ while True:
         reci = repr(data)
         #print(reci)
         print("The Message Recived is " + rec[2:-1])
-        m = input(": ")
+        m = input("What Message Would You like to send?: ")
     except:
         s.shutdown(1)
         s.close()
