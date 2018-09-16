@@ -4,11 +4,11 @@ s.connect(('Put IP Here', 50000))
 m = "HI"
 while True:
     try:
-        print(1)
+        #print(1)
         s.send(m.encode())
         data = s.recv(1024)
         reci = repr(data)
-        print(reci)
+        #print(reci)
         print("The Message Recived is " + rec[2:-1])
         m = input(": ")
     except:
